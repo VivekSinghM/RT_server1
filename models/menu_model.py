@@ -97,6 +97,8 @@ class TempMenu:
         TempMenu.set_menu(Menu.get_menu_dict())
         return True
 
+TempMenu.load_All_Menu()
+
 class ComboMenu(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(150), nullable=False, unique=True)
