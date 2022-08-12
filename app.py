@@ -16,6 +16,5 @@ import api.table_manager
 import api.menu_manger
 from api.all_api_call import app
 
-
 if __name__ == '__main__':
     app.run(debug=True)
