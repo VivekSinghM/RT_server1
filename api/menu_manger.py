@@ -7,7 +7,6 @@ from flask import make_response, jsonify, request
 @app.route('/getMenu', methods=['GET'])
 def get_menu():
     print("hi")
-    print(TempMenu.menu)
     return make_response(jsonify(TempMenu.menu) ,201)
 
 @app.route('/addMenuItems',methods=['GET'])

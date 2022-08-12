@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30932ee1-ddb3-40bf-8f48-3a4c769a8d44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/table_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/table_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/table_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/table_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/token_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/token_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/tables/Tables.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/tables/Tables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/tables/table/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/components/dashboard/tables/table/Table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/components/orderWindow/CurrentOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/components/orderWindow/CurrentOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/context/OrderProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/context/OrderProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rtm_client/src/static/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../rtm_client/src/static/Logo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/database_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/database_connector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,13 +21,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/python class/rt_server/rt_server1",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.start_server">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="RTM_server2" />
