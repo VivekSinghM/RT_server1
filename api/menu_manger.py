@@ -1,6 +1,6 @@
 import json
-from main import app
-from models.menu_model import Menu, TempMenu
+from app import app
+from models.menu import Menu, TempMenu
 from flask import make_response, jsonify, request
 
 

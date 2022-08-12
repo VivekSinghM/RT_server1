@@ -1,7 +1,7 @@
 import json
-from main import app
+from app import app
 from flask import make_response, jsonify, request
-from models.table_model import Order, Table
+from models.table import Order, Table
 from pyqrcode import create as create_qr
 from constant import base_file_path, table_base_URL
 

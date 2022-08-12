@@ -1,4 +1,4 @@
-from services.database_connector import db
+from services.db_connector import db
 
 class RM_USER(db.Model):
 

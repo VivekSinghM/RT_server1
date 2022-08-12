@@ -4,10 +4,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import uuid
 
-from main import app
-from services.database_connector import db
-from models.user_model import RM_USER
+from app import app
+from services.db_connector import db
 from services.token_manager import Token
+from models.user import RM_USER
 
 
 # @app.route("/users")

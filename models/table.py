@@ -1,6 +1,6 @@
 from datetime import datetime
-from services.database_connector import db, mongo_col
-from models.menu_model import Menu, TempMenu
+from services.db_connector import db, mongo_col
+from models.menu import Menu, TempMenu
 from sqlalchemy import null
 from bson.objectid import ObjectId
 

@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
-from constant import *
-from services.token_manager import Token
+# from flask import Flask, request, jsonify
+# from constant import *
+# from services.token_manager import Token
 
-app = Flask(__name__)
-app.secret_key = secret_key
+# app = Flask(__name__)
+# app.secret_key = secret_key
+
 
 # def auth_token_required(func):
 #     @warps(func)
@@ -20,4 +21,14 @@ app.secret_key = secret_key
 #         return func (user, *args, **kargs)
 #     return decorated
 
+# from flask import Flask, request, jsonify
+# from constant import *
+# from services.token_manager import Token
+
+# app = Flask(__name__)
+# app.secret_key = secret_key
+
+# import api.all_api_call
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
