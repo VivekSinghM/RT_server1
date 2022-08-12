@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import uuid
 
-from app import app
+from main import app
 from services.database_connector import db
 from models.user_model import RM_USER
 from services.token_manager import Token

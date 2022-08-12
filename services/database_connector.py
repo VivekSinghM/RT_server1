@@ -1,4 +1,4 @@
-from app import app
+from main import app
 from flask_sqlalchemy import SQLAlchemy
 
 from constant import *

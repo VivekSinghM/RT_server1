@@ -1,5 +1,5 @@
 import json
-from app import app
+from main import app
 from flask import make_response, jsonify, request
 from models.table_model import Order, Table
 from pyqrcode import create as create_qr

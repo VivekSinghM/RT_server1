@@ -1,11 +1,13 @@
 import json
-from app import app
+from main import app
 from models.menu_model import Menu, TempMenu
-from flask import make_response, jsonify, request, send_file
+from flask import make_response, jsonify, request
 
 
 @app.route('/getMenu', methods=['GET'])
 def get_menu():
+    print("hi")
+    print(TempMenu.menu)
     return make_response(jsonify(TempMenu.menu) ,201)
 
 @app.route('/addMenuItems',methods=['GET'])
