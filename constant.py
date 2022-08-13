@@ -8,7 +8,7 @@ oracle, postgress, mysql= 'oracle','postgress','mysql'
 SQL_URI={
     oracle: 'oracle://hr:hr@localhost:1521/xe',
     # postgress: 'postgresql://postgres:root@localhost/RTM_DB',
-    postgress: 'postgresql://jdhnqbriwmirpq:5939355f63dc41632b9f5ff907a9e6db6f67bf9e6278bbf04df78600f230eb52@ec2-44-208-88-195.compute-1.amazonaws.com:5432/deq22c1ut0lokj',
+    postgress: 'postgresql://aatdbfueskfdda:4e4781ba808e52bdf9fca9b1a69a3d7e160a04bd5dc7cecb8c7749a2ac3ec51e@ec2-3-225-110-188.compute-1.amazonaws.com:5432/dcisf9fonmofjo',
     mysql: 'mysql://root:root@localhost/day16'
 }
 mongodb='mogodb'
