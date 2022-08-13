@@ -6,9 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 from constant import *
 
 LOCAL_DATABASE_URL = SQL_URI[postgress]
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-    'DATABASE_URL', LOCAL_DATABASE_URL)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = LOCAL_DATABASE_URL
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # db = SQLAlchemy(app)
 db = SQLAlchemy()
