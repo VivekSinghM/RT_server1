@@ -15,6 +15,7 @@ class Table(db.Model):
     def get_all_tables():
         return Table.query.all()
 
+    #  to add more table in db
     @staticmethod
     def add_table(table_no, table_order, occupied):
         try:
@@ -24,6 +25,7 @@ class Table(db.Model):
         except Exception:
             return False
 
+    #  to add multi. tables in db
     @staticmethod
     def genrate_tables(no_of_table):
         try:
@@ -36,6 +38,7 @@ class Table(db.Model):
             print(e)
             return False
 
+    #  to change occupied for a table by id
     @staticmethod
     def update_occupied(id):
         try:
@@ -45,6 +48,7 @@ class Table(db.Model):
         except Exception:
             return False
 
+    # to create order and set it to a table with table id, order items
     @staticmethod
     def create_order(tId, order, uid=None):
         p_items = {}
@@ -57,7 +61,7 @@ class Table(db.Model):
                 p_items.update({item: qty})
                 total+= qty*TempMenu.menu[item]['rate']
 
-            order_id = Order.set_order(p_items, uid, total)
+            order_id = Order.add_order(p_items, uid, total)
             tempTable=Table.query.filter_by(table_id=tId).first()
             tempTable.table_order = order_id
             if (not tempTable.occupied):
@@ -68,6 +72,7 @@ class Table(db.Model):
             print("error occurred in adding order")
             return False
 
+    # to add more items in order
     @staticmethod
     def update_order(oId, order):
         temp_order = Order.get_order(oId)['order']
@@ -89,23 +94,25 @@ class Table(db.Model):
             print("error occurred in adding items in order:", id)
             return False
     
+    # to complete a order and set table occupied false
     @staticmethod
     def close_order(tId,oId,paid):
         tempTable=Table.query.filter_by(table_id=tId).first()
-        print(Order.get_order(id=oId)['Paid'], paid)
-        if Order.get_order(id=oId)['Paid']==paid :
-            tempTable.table_order = null
-            if (tempTable.occupied):
-                Table.update_occupied(tId)
-            db.session.commit()
-            return True
+        # print(Order.get_order(id=oId), paid)
+        # if Order.get_order(id=oId)['paid']==paid :
+        tempTable.table_order = None
+        if (tempTable.occupied):
+            Table.update_occupied(tId)
+        db.session.commit()
+        return True
         
 
-
+    # to create a dict of table data to passed to client
     @staticmethod
     def get_tabels_dict():
         return {k: v for d in Table.get_all_tables() for k, v in d.serialize.items()}
 
+    # to create a proper dict to be passed as json
     @property
     def serialize(self):
         order = {}
@@ -123,18 +130,21 @@ class Table(db.Model):
 
 db.create_all()
 
-
+# Oredr class to manage all order related oprations.
 class Order:
+
+    # get full order details by order id
     @staticmethod
     def get_order(id):
-        try:
-            query = {
-                '_id': ObjectId(id)
-            }
+        query = {
+            '_id': ObjectId(id)
+        }
+        try:            
             return mongo_col.find_one(filter=query)
         except Exception as e:
             print("erroe in loadin order for id:", id)
-    
+
+    # get only order items by order id
     @staticmethod
     def get_order_items(id):
         try:
@@ -145,8 +155,9 @@ class Order:
         except Exception as e:
             print("erroe in loading order items for id:", id)
 
+    # get multi order by id
     @staticmethod
-    def get_orders(ids):
+    def get_orders_by_id(ids):
         temp_orders = {}
         try:
             for id in ids:
@@ -161,8 +172,27 @@ class Order:
             print("erroe in loadin order for id:", id)
             return False
 
+    # get all orders
     @staticmethod
-    def set_order(p_items, uid, total):
+    def get_orders():
+        try:
+            orders = {}
+            cursor = mongo_col.find({}).sort([('_id',-1)]).limit(20)
+            for doc in cursor:
+                # print(doc)
+                temp = doc.copy()
+                temp['invoice id'] = str(temp['_id'])
+                del temp['_id']
+                orders[str(doc['_id'])] = temp
+            # print(orders)
+            return orders
+        except Exception as e:
+            print("erroe in loadin order for id:", e)
+            return False
+
+    # create new order in order db
+    @staticmethod
+    def add_order(p_items, uid, total):
         try:
             now = datetime.now()
             order_dict = {
@@ -180,6 +210,7 @@ class Order:
             print("error in adding order")
             return False
 
+    # add item in order 
     @staticmethod
     def update_order(id, items):
         try:
@@ -191,21 +222,3 @@ class Order:
             return mongo_col.update_one(query, {'$set': data}, upsert=False).inserted_id
         except Exception as e:
             print("erroe in loadin order for id:", id)
-
-
-# class CurrentOrders:
-#     orders={}
-#     # @staticmethod
-#     # def set_menu(menu_items):
-#     #     print('setting up currentOrders')
-#     #     CurrentOrders.orders=menu_items
-#     @staticmethod
-#     def add_item(item):
-#         if CurrentOrders.orders=={}: print('setting up CurrentOrders')
-#         CurrentOrders.orders.update(item)
-#     @staticmethod
-#     def remove_item(key):
-#         CurrentOrders.orders.pop(key)
-#     @staticmethod
-#     def update_item(item):
-#         CurrentOrders.orders.update(item)

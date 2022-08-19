@@ -1,16 +1,16 @@
 import json
-from app import app
 from models.menu import Menu, TempMenu
-from flask import make_response, jsonify, request
+from flask import Blueprint, make_response, jsonify, request
 
+menu_blueprint = Blueprint(name='menu_routes',import_name=__name__)
 
-@app.route('/getMenu', methods=['GET'])
+@menu_blueprint.route('/getMenu', methods=['GET'])
 def get_menu():
-    print("hi")
     return make_response(jsonify(TempMenu.menu) ,201)
 
-@app.route('/addMenuItems',methods=['GET'])
+@menu_blueprint.route('/addMenuItem',methods=['POST'])
 def add_menu_item():
-    temp_items=json.load(request.data())
-    Menu.add_menu_item(temp_items)
+    temp_items=json.loads(request.data)
+    print("adding : ", temp_items)
+    Menu.add_menu_item(item_name = temp_items['name'], item_price = int(temp_items['price']), item_img = temp_items['img'], item_description = temp_items['desc'])
     return make_response('true',201)
