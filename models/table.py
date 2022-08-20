@@ -1,5 +1,4 @@
 from datetime import datetime
-from msilib.schema import tables
 import string, random
 from services.db_connector import db, mongo_col
 from models.menu import Menu, TempMenu
